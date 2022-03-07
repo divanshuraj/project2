@@ -11,10 +11,11 @@ def xyz():
      return render_template('app.html')
 app.route('data',methods=['POST'])
 def obj():
-    num1=request.form['a']
-    num2=request.form['b']
-    total=int(num1)+int(num2)
-    return render_template('app.html',tanu=total)
+     if(request.method=='POST'):
+          num1=request.form['a']
+          num2=request.form['b']
+          total=int(num1)+int(num2)
+          return render_template('app.html',tanu=total)
 if __name__ == '__main__':
     app.run()    
 
